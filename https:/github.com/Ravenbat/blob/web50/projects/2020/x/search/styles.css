@@ -1,0 +1,87 @@
+
+#search {
+    width: 600px;
+    height: 44px;
+    top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 24px;
+    padding: 1px 35px;
+    border:1px solid gray;
+    font-family: arial, sans-serif;
+    font-size: 20px;
+    outline: none;
+    padding-right: 20px;
+    display: flex;
+
+}
+#search, #button, #feeling, img{
+    position: relative;
+}
+
+#button {
+    margin-left: auto;
+    height: 35px;
+    right: 20px;
+}
+
+#feeling {
+    margin-right: auto;
+    height: 35px;
+    left: 8px;
+}
+#google {
+    width: 500px;
+    height: 230px;
+    top: 120px;
+    left:60px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.search {
+    float: right;
+    top:100px;
+}
+.buttons {
+    position: relative;
+    top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+#glass {
+    position: absolute;
+    top: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 100%;
+}
+#mglass {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    right:320px;
+    top: 123px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+}
+#googleimage {
+    width: 500px;
+    height: 230px;
+    top: 120px;
+    left: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+#imagebutton {
+    position: relative;
+    top: 150px;
+    height:35px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}

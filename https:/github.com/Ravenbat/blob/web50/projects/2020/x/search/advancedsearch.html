@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Advanced Search</title>
+    </head>
+    <style>
+        img {
+            width: 100px;
+            height: 40px;
+        }
+        h1 {
+             color: red;
+             margin-left: 50px;
+             font-family: Arial, Helvetica, sans-serif;
+             font-weight: normal;
+             margin-top: 30px;
+             font-size:20px;
+             margin-left: 30px;
+        }
+        p {
+            margin-top: 200px;
+            margin-left: 30px;
+            font-family: arial, sans-serif;
+            display: inline;
+        }
+        .exactword {
+            margin-top: 30px;
+        }
+        .form {
+            margin-left: 30px;
+            font-family: arial, sans-serif;
+            font-size: 13px;
+        }
+        #allthesewords, #thisexactword, #anyofthesewords, #noneofthesewords {
+            margin-top: 17px;
+            position:relative; 
+            margin-right: auto; 
+            height: 25px;
+            padding: 1px 5px; 
+            width: 570px;
+            display: inline;
+            border: 0.5px solid gray;
+            outline-color: dodgerblue;
+        }
+        #p2 {
+            margin-left: 630px;
+            margin-right: auto;
+            color: gray;
+            font-size: 14px;
+        }
+        #button {
+            margin-top: 25px;
+            margin-left: 695px;
+            margin-right: auto;
+            font-size: 11px;
+            font-weight:bold;
+            padding: 0 12px;
+            height: 30px;
+            font-family: arial, sans-serif;
+            background-color: #4d90fe;
+            color: #ffffff;
+            border: 1px solid #3079ed;
+        }
+    </style>
+    <body>
+        <a href="index.html"> <img src="https://sites.google.com/site/dekchysite95/_/rsrc/1480944463347/extra-credit/google.png" alt="go back to main search" title="Back to main search">
+            </a>
+        <h1> Advanced Search</h1><br><br><br>
+        <p> Find pages with...</p>
+        <p id="p2"><b>To do this in the search box</b></p>
+        <form action="http://www.google.com/search?">
+            <div class="form">
+            <label id="firstone" for="allthesewords">all these words:</label>
+            <input style="margin-left: 90px;" type="text" id="allthesewords" name="as_q"> <p>Type the important words:  tricolor rat terrier</p><br>
+            <label for="thisexactword">this exact word or phrase:</label>
+            <input style="position:absoulute; margin-right: auto; margin-left: 32px; "type="text" id="thisexactword" name="as_epq"> <p>Put exact words in quotes: "rat terrier"</p><br>
+            <label for="anyofthesewords">any of these words:</label>
+            <input style="position:relative; margin-right: auto; margin-left : 68px; "type="text" id="anyofthesewords" name="as_oq"><p>Type OR between all the words you want:  miniature OR standard</p><br>
+            <label for="noneofthesewords">none of these words:</label>
+            <input style="position:relative; margin-right: auto; margin-left : 60px; "type="text" id="noneofthesewords" name="as_eq"><p>Put a minus sign just before words you don't want:  -rodent, -"Jack Russell"</p>
+            </div>
+            <input type="submit" id="button" value="Advanced Search">
+          </form>
