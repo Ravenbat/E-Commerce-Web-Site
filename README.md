@@ -8,6 +8,7 @@ This is an E-commerce web site developed by me.
 
 
 This web application's features:
+
      - User can register and log in
      - Can see active listings in index page and click on them to go to listing page.
      - Can place a bid on a listing
