@@ -1,0 +1,71 @@
+body {
+    padding: 10px;
+    background-color: gainsboro;
+}
+.listing {
+    border:solid gray 1px;
+    margin-top:50px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width:99%;
+    height: 10%;
+    display: flex;
+}
+.listing-info{
+    position: relative;
+    float:right;
+    margin-left: 40px;
+}
+.comments {
+    margin-top:40px;
+    margin-left: 40px;
+}
+.categories {
+    display: inline;
+    float: left;
+    margin-left: 50px;
+}
+.auctions, .categories, .watchlist {
+    display: inline;
+    float:left;
+    margin-left: 50px;
+    color:white;
+}
+
+.headings {
+    background-color: #6495ED;
+    height:30px;
+    margin-bottom: 30px;
+}
+#closelisting {
+    background-color: aqua;
+    width: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    margin-left: 400px;
+    padding: 15px 32px;
+    text-align: center;
+}
+.commentpost {
+    margin-top: 50px;
+}
+.testlisting img{
+    display: inline;
+    float:left;
+}
+.testlisting {
+    float: none;
+}
+.bid {
+    color:blueviolet
+}
+#submitbutton {
+    background-color: greenyellow;
+    text-align:center;
+    padding: 14px 10px;
+}
+#alllistings {
+    position: relative;
+    left: 2%;
+}

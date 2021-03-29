@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    {% for listing in al %}
+    {% if listing.listing_active == True %}
+    <ul>
+        <div class="listing">
+            <div class="image">
+                <img src = "{{ listing.listing_image }}" alt="listing image here">
+            </div>
+            <div class="listinginfo">
+            <h4><a href="{% url 'listing' id=listing.id %}">{{ listing.listing_name }}</a></h4>
+            {% if listing.highest_bid == None %}
+                <h5>${{ listing.starting_bid }}</h5>
+            {% else %}
+                <h5>${{ listing.highest_bid }}</h5>
+            {% endif %}
+            <h6>Created at {{ listing.listing_created_date }}</h6>
+            </div>
+        </div>
+    </ul>
+    {% endif %}
+    {% endfor %}
+{% endblock %}

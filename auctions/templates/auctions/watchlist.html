@@ -1,0 +1,19 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% for i in wl %}
+        <div class="listing">
+            <div class="image">
+                <img src="{{ i.ownerlist.listing_image }}" alt="listing image here" width="500" height="300">
+            </div>
+            <div class="listinginfo">
+            <h4><a href="{% url 'listing' id=i.ownerlist.id %}">{{ i.ownerlist.listing_name }}</a></h4>
+            {% if i.ownerlist.listing.highest_bid == None %}
+                <h5>${{ i.ownerlist.starting_bid }}</h5>
+            {% else %}
+                <h5>${{ i.ownerlist.highest_bid }}</h5>
+            {% endif %}
+            <h6>Created at {{ i.ownerlist.listing_created_date }}</h6>
+        </div>
+    {% endfor %}
+{% endblock %}

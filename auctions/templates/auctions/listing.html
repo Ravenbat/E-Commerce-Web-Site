@@ -1,0 +1,61 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    TODO
+    <h1>Listing: {{ listing.listing_name }}</h1>
+    {% if user.is_authenticated %}
+        <a href="{% url 'add_to_watchlist' id=listing.id %}">Watchlist</a><br>
+    {% endif %}
+    <div class="testlisting">
+    <img src="{{listing.listing_image}}" alt="Listing Image" width="600" height="300">
+    <div class="listingtexts">
+    <p><strong>{{ listing.listing_description }}</strong></p>
+    {% if listing.highest_bid == None %}
+        <h2 class="bid">${{ listing.starting_bid }}</h2>
+    {% else %}
+        <h2 class="bid">${{ listing.highest_bid }}</h2>
+    {% endif %}
+    <h4>{{ bids }} bids so far.</h4>
+    {% if varuser == True and listing.listing_creator != request.user %}
+        <h4>Your bid is the current bid.</h4>
+    {% endif %}
+    {% if user.is_authenticated and listing.listing_creator != request.user and listing.listing_active == True %}
+        <form method="POST", action='{% url "placebid" listing.id %}'>
+            {% csrf_token %}
+            <label for="bidamount">Place Bid:</label>
+            <input min="{{ minbid }}" type="number" id="bidamount" name="bidamount">
+            <input id="submitbutton" type="submit">
+        </form>
+    {% endif %}
+    {% if winner == request.user %}
+        <h4>You won this listing! Congratulations!</h4>
+    {% endif %}
+    <h3>Details:
+        <ul>Listed by {{ listing.listing_creator }}</ul>
+        {% if listing.listing_category == None %}
+            <ul>Category: No Category Listed</ul>
+        {% else %}
+            <ul>Category: {{ listing.listing_category }}</ul>
+        {% endif %}
+    </h3>
+    </div>
+    </div>
+    {% if user == listing.listing_creator and listing.listing_active == True %}
+        <a id="closelisting" href="{% url 'closelisting' listing.id %}">Close this listing</a>
+        {% elif user == listing.listing_creator and listing.listing_active == False %}
+            <a id="closelisting" href="{% url 'closelisting' listing.id %}">Open this listing</a>
+    {% endif %}
+    {% if user.is_authenticated %}
+        <form method="POST", class="commentpost" action='{% url "newcomment" listing.id %}'>
+            {% csrf_token %}
+            <textarea id="comment" name="comment" placeholder="Add a public comment..." rows="4" cols="80"></textarea><br>
+            <input type="submit">
+        </form>
+    {% endif %}
+    {% for comment in comments %}
+        <div class="comments">
+        <h5><b>{{ comment.poster }}</b>&nbsp;&nbsp;{{ comment.created_at }}<br></h5>
+        <h8>{{ comment.text }}</h8>
+        </div>
+    {% endfor %}
+{% endblock %}
